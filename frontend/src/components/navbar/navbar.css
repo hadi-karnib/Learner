@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbarContainer {
+  background-color: #2e7d32;
+  padding: 20px 40px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: calc(100vw - 80px);
+  margin: 0 auto;
+  animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbarContainer h1 {
+  margin: 0 !important;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbarContainer ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 200px;
+  display: flex;
+  gap: 40px;
+}
+
+.navbarContainer li {
+  display: flex;
+}
+
+.navbarContainer a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
+}
+
+.navbarContainer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #b9f6ca;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbarContainer a:hover {
+  color: #b9f6ca; /* Light green from the palette */
+}
+
+.navbarContainer a:hover::after {
+  width: 100%;
+}
+
+.navbarContainer hr {
+  margin: 10px 0;
+  border: 0;
+  height: 1px;
+  background: #b9f6ca; /* Light green from the palette */
+}
+
+.navbarContainer p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0;
+  animation: fadeIn 2s forwards 1s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
