@@ -11,3 +11,13 @@
 h1 {
   margin: 2px !important;
 }
+.enrollments {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.mainwithdrawal {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 100%;
+}

@@ -35,3 +35,27 @@ export const createEnroll = (studentId, classId) => async (dispatch) => {
     toast.error("Error creating enrollment");
   }
 };
+export const getStudentEnrollments = (studentId) => async (dispatch) => {
+  dispatch(enrollmentActions.fetchRequest());
+  try {
+    const token = getToken();
+    const url = `http://localhost:4000/api/enrollment/student/${studentId}`;
+    const response = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(response);
+
+    dispatch(enrollmentActions.fetchSuccess(response.data));
+  } catch (error) {
+    console.log("Error getting enrollments:", error);
+    if (error.response) {
+      dispatch(enrollmentActions.fetchFail(error.response.data));
+    } else {
+      dispatch(enrollmentActions.fetchFail("Network error or no response"));
+    }
+    toast.error("Error getting enrollments");
+  }
+};
