@@ -5,7 +5,10 @@ body {
   color: #2e7d32;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 .home-container {
   text-align: center;
@@ -30,4 +33,7 @@ body {
   padding: 20px;
   margin: 0 auto;
   max-width: 1200px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
