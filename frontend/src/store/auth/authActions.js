@@ -51,8 +51,9 @@ export const signup =
     }
   };
 
-export const logout = () => (dispatch) => {
+export const logout = (navigate) => (dispatch) => {
   localStorage.removeItem("token");
   dispatch(authActions.logout());
   toast.success("Logout successful", { autoClose: 3000 });
+  navigate("/login");
 };

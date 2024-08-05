@@ -10,7 +10,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(logout(navigate));
     navigate("/");
   };
 
