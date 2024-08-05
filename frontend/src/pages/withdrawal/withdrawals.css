@@ -1,0 +1,13 @@
+.withdrawals {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.withdrawalcards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+h1 {
+  margin: 2px !important;
+}
