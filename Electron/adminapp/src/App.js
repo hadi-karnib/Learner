@@ -11,6 +11,7 @@ import {
 import Login from "./pages/login/Login";
 import AdminPanel from "./pages/adminPanel/adminPanel";
 import AddClass from "./pages/addClass/addClass";
+import Withdrawals from "./pages/withdrawals/withdrawals";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/adminpanel" element={<AdminPanel />} />
         <Route path="/addclass" element={<AddClass />} />
+        <Route path="/withdrawals" element={<Withdrawals />} />
       </>
     )
   );

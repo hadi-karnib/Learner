@@ -134,9 +134,17 @@ export const getClassesNotEnrolledIn = async (req, res) => {
     console.log("User enrollments:", userEnrollments);
 
     // Extract the class IDs the user is enrolled in
-    const enrolledClassIds = userEnrollments.map((enrollment) =>
-      enrollment.class._id.toString()
-    );
+    const enrolledClassIds = userEnrollments
+      .map((enrollment) => {
+        if (!enrollment.class) {
+          console.warn(
+            `Enrollment ${enrollment._id} has a null class reference`
+          );
+          return null;
+        }
+        return enrollment.class._id.toString();
+      })
+      .filter((id) => id !== null);
     console.log("Enrolled class IDs:", enrolledClassIds);
 
     // Filter out the classes where the user is already enrolled

@@ -48,3 +48,27 @@ export const getNotInClasses = (userId) => async (dispatch) => {
     }
   }
 };
+export const createClass = (newClass) => async (dispatch) => {
+  dispatch(classesActions.fetchRequest());
+  try {
+    console.log(newClass);
+
+    const token = getToken();
+    const url = `http://localhost:4000/api/classes/`;
+    const response = await axios.post(url, newClass, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    dispatch(classesActions.createclassessuccess(response.data));
+    console.log(response);
+    toast.success("class created successfully");
+  } catch (error) {
+    console.log("Error creating class:", error);
+    if (error.response) {
+      dispatch(classesActions.fetchFail(error.response.data));
+    } else {
+      dispatch(classesActions.fetchFail("Network error or no response"));
+    }
+  }
+};

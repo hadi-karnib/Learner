@@ -17,7 +17,6 @@ const Enroll = () => {
   const dispatch = useDispatch();
   const classes = useSelector((state) => state.classes.classes);
   const loading = useSelector((state) => state.classes.loading);
-  const error = useSelector((state) => state.classes.error);
 
   useEffect(() => {
     dispatch(getNotInClasses(id));
@@ -69,7 +68,6 @@ const Enroll = () => {
         <Sidebar />
         <div className="content">
           {loading && <p>Loading...</p>}
-          {error && <p>Error: {error}</p>}
           {classes && classes.length > 0 ? (
             classes.map((classItem) => (
               <MultiActionAreaCard key={classItem._id} classItem={classItem} />

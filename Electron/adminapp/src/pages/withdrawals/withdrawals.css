@@ -1,0 +1,11 @@
+.innercontent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: start;
+}

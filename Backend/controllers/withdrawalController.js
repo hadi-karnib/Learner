@@ -34,9 +34,20 @@ export const getWithdrawals = async (req, res) => {
   try {
     const withdrawals = await Withdrawal.find()
       .populate("student", "name email")
-      .populate("class", "title");
+      .populate("class", "title description");
+    console.log("Withdrawals after population:", withdrawals);
+    if (withdrawals.length > 0) {
+      withdrawals.forEach((withdrawal) => {
+        console.log(
+          `Withdrawal ID: ${withdrawal._id}, Student: ${withdrawal.student}, Class: ${withdrawal.class}`
+        );
+      });
+    } else {
+      console.log("No withdrawals found.");
+    }
     res.status(200).json(withdrawals);
   } catch (error) {
+    console.error("Error fetching withdrawals:", error);
     res.status(500).json({ error: error.message });
   }
 };
