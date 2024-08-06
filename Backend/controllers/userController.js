@@ -84,3 +84,27 @@ export const deleteUser = async (req, res) => {
     res.status(500).json({ error: "Server error: " + err.message });
   }
 };
+export const loginAdmin = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ error: "No user found" });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
+
+    if (user.role !== "admin") {
+      return res.status(403).json({ error: "Access denied: not an admin" });
+    }
+
+    const token = generateToken(user);
+    res.status(200).json({ success: "Admin login successful", token });
+  } catch (err) {
+    res.status(500).json({ error: "Server error: " + err.message });
+  }
+};

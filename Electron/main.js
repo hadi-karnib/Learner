@@ -12,7 +12,6 @@ function createMainWindow() {
     webPreferences: {
       contextIsolation: true,
       nodeIntegration: true,
-      preload: path.join(__dirname, "preload.js"),
     },
   });
 

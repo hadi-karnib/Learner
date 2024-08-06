@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-// import { login } from "../../store/auth/authActions";
+import { login } from "../../store/auth/authActions";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -18,7 +18,7 @@ const Login = () => {
       toast.error("Please fill in all fields");
       return;
     } else {
-      //   dispatch(login({ email, password, navigate }));
+      dispatch(login({ email, password, navigate }));
     }
   };
 

@@ -14,7 +14,7 @@ const Sidebar = () => {
     <div className="Sidebar">
       <ul>
         <li>
-          <FaHome /> <Link to="/adminpanel">Add Classes</Link>
+          <FaHome /> <Link to="/adminpanel">Home</Link>
         </li>
         <li>
           <FaBookOpen /> <Link to="/addClass">Add Classes</Link>

@@ -11,13 +11,12 @@ import {
 import Login from "./pages/login/Login";
 import AdminPanel from "./pages/adminPanel/adminPanel";
 import AddClass from "./pages/addClass/addClass";
-
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<AdminPanel />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/adminpanel" element={<AdminPanel />} />
         <Route path="/addclass" element={<AddClass />} />
       </>
     )
