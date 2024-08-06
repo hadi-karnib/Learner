@@ -1,5 +1,11 @@
 import React from "react";
-import { FaHome, FaBookOpen, FaPenAlt, FaSignOutAlt } from "react-icons/fa";
+import {
+  FaHome,
+  FaBookOpen,
+  FaPenAlt,
+  FaSignOutAlt,
+  FaUpload,
+} from "react-icons/fa";
 import "./sidebar.css";
 import { Link } from "react-router-dom";
 
@@ -8,13 +14,16 @@ const Sidebar = () => {
     <div className="Sidebar">
       <ul>
         <li>
+          <FaHome /> <Link to="/adminpanel">Add Classes</Link>
+        </li>
+        <li>
           <FaBookOpen /> <Link to="/addClass">Add Classes</Link>
         </li>
         <li>
-          <FaPenAlt /> <Link to="/enroll">Enroll</Link>
+          <FaPenAlt /> <Link to="/withdrawals">Withdrawls</Link>
         </li>
         <li>
-          <FaSignOutAlt /> <Link to="/withdraw">Withdraw</Link>
+          <FaUpload /> <Link to="/upload">upload</Link>
         </li>
         <li>
           <FaSignOutAlt /> <a>Logout</a>
