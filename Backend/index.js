@@ -6,6 +6,7 @@ import userRouter from "./routes/userRoutes.js"; // Ensure the path is correct
 import classRouter from "./routes/classRoutes.js";
 import enrollmentRouter from "./routes/enrollmentRoutes.js";
 import withdrawalRouter from "./routes/withdrawalRoutes.js";
+import uploadsRouter from "./routes/uploadRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -28,6 +29,7 @@ app.use("/api/users", userRouter);
 app.use("/api/classes", classRouter);
 app.use("/api/enrollment", enrollmentRouter);
 app.use("/api/withdrawal", withdrawalRouter);
+app.use("/api/uploads", uploadsRouter);
 
 const PORT = process.env.PORT || 5000;
 mongoose
