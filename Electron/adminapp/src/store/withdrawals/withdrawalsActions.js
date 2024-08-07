@@ -45,6 +45,7 @@ export const updateWithdrawalStatus =
         }
       );
       dispatch(withdrawalActions.updateWithdrawalStatusSuccess(response.data));
+      dispatch(getWithdrawals());
       toast.success("Withdrawal status updated successfully!");
     } catch (error) {
       console.log("Error updating withdrawal status:", error);
