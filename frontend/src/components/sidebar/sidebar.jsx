@@ -1,5 +1,11 @@
 import React from "react";
-import { FaHome, FaBookOpen, FaPenAlt, FaSignOutAlt } from "react-icons/fa";
+import {
+  FaHome,
+  FaBookOpen,
+  FaPenAlt,
+  FaSignOutAlt,
+  FaBook,
+} from "react-icons/fa";
 import "./sidebar.css";
 import { useDispatch } from "react-redux";
 import { logout } from "../../store/auth/authActions";
@@ -25,6 +31,9 @@ const Sidebar = () => {
         </li>
         <li>
           <FaSignOutAlt /> <Link to="/withdraw">Withdraw</Link>
+        </li>
+        <li>
+          <FaBook /> <Link to="/myclasses">My Classes</Link>
         </li>
         <li>
           <FaSignOutAlt /> <a onClick={handleLogout}>Logout</a>

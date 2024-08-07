@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Home from "./pages/home/home";
 import Enroll from "./pages/enroll/enroll";
 import Withdrawal from "./pages/withdrawal/withdrawal";
+import Myclasses from "./pages/myclasses/myclasses";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -22,6 +23,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/enroll" element={<Enroll />} />
         <Route path="/withdraw" element={<Withdrawal />} />
+        <Route path="/myclasses" element={<Myclasses />} />
       </>
     )
   );
