@@ -3,9 +3,9 @@ import multer from "multer";
 import path from "path";
 
 const storage = multer.diskStorage({
-  destination: "uploads/",
+  destination: "uploads/", // Ensure this directory exists
   filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname));
+    cb(null, file.originalname); // Use the original name
   },
 });
 

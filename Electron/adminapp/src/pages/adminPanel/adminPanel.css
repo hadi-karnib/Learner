@@ -9,6 +9,7 @@
 }
 .content {
   display: flex;
+  flex-direction: row !important;
   gap: 20px;
   margin: 10px;
   flex-wrap: wrap;

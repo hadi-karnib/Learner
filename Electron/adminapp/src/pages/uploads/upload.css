@@ -1,0 +1,46 @@
+/* upload.css */
+.uploads-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.upload-item span {
+  margin-right: 10px;
+}
+
+.uploads-list a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.uploads-list a:hover {
+  text-decoration: underline;
+}
+
+.Modal__Overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Modal__Content {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  outline: none;
+}
